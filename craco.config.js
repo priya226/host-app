@@ -7,8 +7,7 @@ module.exports = {
         publicPath: "auto",
       },
     },
-    plugins: {
-      add: [
+    plugins: [
         new ModuleFederationPlugin({
           name: "host",
           filename: "remoteEntry.js",
@@ -20,8 +19,7 @@ module.exports = {
             react: { singleton: true, eager: true, requiredVersion: '^18.3.1' },
             "react-dom": { singleton: true, eager: true, requiredVersion: '^18.3.1' },
           },          
-        }),
+        })
       ],
-    },
   },
 };
